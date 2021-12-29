@@ -49,10 +49,12 @@ INSTALLED_APPS = [
 
 
     # todo  packager 
+    "bootstrap4",
     "taggit",
     'django_summernote',
-    "bootstrap4",
     'django_filters',
+
+    'django_forms_bootstrap',
 ]
 
 MIDDLEWARE = [
