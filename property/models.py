@@ -71,6 +71,10 @@ class PropertyReview(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
 
 
+    class Meta:
+        ordering = ['created_at']
+
+        
     def __str__(self):
         return str(self.property)
 
@@ -88,8 +92,8 @@ class PropertyBook(models.Model):
     property = models.ForeignKey(Property, related_name="property_book" ,on_delete=models.CASCADE)
     date_from = models.DateField(default=timezone.now)
     date_to = models.DateField(default=timezone.now)
-    guest = models.IntegerField(choices=COUNT , max_length=2)
-    children = models.IntegerField(choices=COUNT , max_length=2)
+    guest = models.IntegerField(choices=COUNT)
+    children = models.IntegerField(choices=COUNT)
 
     
 
