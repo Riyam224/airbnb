@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-+x0kt$11y&0ukdab&%d57s=m32t@7&!jpi-q0^p9g4#urws=ek
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['myairbnb11.herokuapp.com' , '127.0.0.1']
 
 
 # Application definition
