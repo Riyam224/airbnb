@@ -2,7 +2,7 @@ from typing import List
 from django.shortcuts import redirect, render , redirect
 
 # Create your views here.
-from django.views.generic import ListView  , DetailView
+from django.views.generic import ListView  , DetailView , CreateView
 from django.views.generic.edit import FormMixin
 from django_filters import filterset
 from .models import Property 
@@ -51,3 +51,10 @@ class PropertyDetail(FormMixin, DetailView):
         else:
             print('not valid')
     
+
+
+
+
+
+class AddListing(CreateView):
+    pass
