@@ -32,6 +32,9 @@ ALLOWED_HOSTS = ['myairbnb11.herokuapp.com' , '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+
+    'accounts',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,7 +44,7 @@ INSTALLED_APPS = [
 
 #   todo apps 
 
-    'accounts',
+ 
     'blog',
     'property',
     'about',
@@ -55,6 +58,9 @@ INSTALLED_APPS = [
     'django_filters',
 
     'django_forms_bootstrap',
+
+    # todo 
+     'rest_framework',
 ]
 
 MIDDLEWARE = [
