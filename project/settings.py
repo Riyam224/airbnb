@@ -42,6 +42,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+
+
+    # todo 
+
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+
 #   todo apps 
 
  
@@ -60,10 +68,15 @@ INSTALLED_APPS = [
     'django_forms_bootstrap',
 
     # todo 
-     'rest_framework',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
  
    
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,6 +88,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
+
 
 ROOT_URLCONF = 'project.urls'
 
