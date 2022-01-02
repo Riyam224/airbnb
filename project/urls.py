@@ -28,7 +28,11 @@ urlpatterns = [
     path("", include('settings.urls' , namespace='home')),
     path('summernote/', include('django_summernote.urls')),
     # todo restframework 
-    path('api-auth/', include('rest_framework.urls'))
+    path('api-auth/', include('rest_framework.urls')),
+    # todo rest auth for users 
+   
+  
+
 
 ]
 
