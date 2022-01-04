@@ -1,15 +1,20 @@
 from .models import Post , Category
 from .serializers import PostSerializer
 from rest_framework.response import Response
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
+
+# todo secure api 
+from rest_framework.permissions import IsAuthenticated
+
 
 
 
 
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def post_list_api(request):
     all_posts = Post.objects.all()
     data = PostSerializer(all_posts , many=True , context={'request': request}).data
@@ -17,6 +22,8 @@ def post_list_api(request):
 
 
 @api_view(['GET'])
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def post_detail_api(request, id):
     post = get_object_or_404(Post , id=id)
     data = PostSerializer(post).data
@@ -25,6 +32,7 @@ def post_detail_api(request, id):
 
 
 @api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def post_search_api(request , query):
     posts = Post.objects.filter(
 

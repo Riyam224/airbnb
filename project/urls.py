@@ -18,6 +18,14 @@ from django.urls import path , include
 from django.conf import settings
 from django.conf.urls.static import static
 
+
+from rest_framework import permissions
+
+
+
+
+
+
 urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls' , namespace='accounts')),
@@ -26,20 +34,22 @@ urlpatterns = [
     path("blog/", include('blog.urls' , namespace='blog')),
     path('about/', include('about.urls' , namespace='about')),
     path("", include('settings.urls' , namespace='home')),
+    
+
     path('summernote/', include('django_summernote.urls')),
     # todo restframework 
     path('api-auth/', include('rest_framework.urls')),
     # todo rest auth for users 
     path('rest-auth/', include('dj_rest_auth.urls')),
-    path('rest-auth/registration/', include('dj_rest_auth.registration.urls'))
-   
-  
+    path('rest-auth/registration/', include('dj_rest_auth.registration.urls')),
 
+    
+  
 
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

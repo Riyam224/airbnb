@@ -69,12 +69,28 @@ INSTALLED_APPS = [
 
     # todo 
     'rest_framework',
+     # todo token authentication
     'rest_framework.authtoken',
     'dj_rest_auth',
-    'dj_rest_auth.registration',
- 
-   
+    'dj_rest_auth.registration', 
+    
+    
+     
 ]
+
+
+# TODO FOR REST
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        
+    ]
+}
+
+
+
 
 SITE_ID = 1
 
