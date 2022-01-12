@@ -73,6 +73,10 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'dj_rest_auth',
     'dj_rest_auth.registration', 
+
+
+    # todo translate 
+    'tof',
     
     
      
@@ -90,13 +94,12 @@ REST_FRAMEWORK = {
 }
 
 
-
-
 SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -172,6 +175,14 @@ USE_I18N = True
 
 USE_TZ = True
 
+LOCALE_PATHS = [os.path.join(BASE_DIR , 'locale')]
+
+
+LANGUAGES = [
+   ('ar' , ('Arabic')),
+   ('en' , ('English')),
+]
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
@@ -184,8 +195,6 @@ STATIC_ROOT = os.path.join(BASE_DIR , "static" , "staticroot")
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
 
 
 STATICFILES_DIRS = [ 

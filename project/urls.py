@@ -27,6 +27,8 @@ from rest_framework import permissions
 
 
 urlpatterns = [
+    path('i18n/', include('django.conf.urls.i18n')),
+    
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls' , namespace='accounts')),
     path('admin/', admin.site.urls),

@@ -6,10 +6,11 @@ from taggit.managers import TaggableManager
 from django.utils import timezone
 from django.utils.text import slugify
 from django.urls import reverse
+from django.utils.translation import gettext_lazy as _
 
 class Post(models.Model):
-    author = models.ForeignKey(User, related_name="post_author" ,on_delete=models.CASCADE)
-    title = models.CharField(max_length=50)
+    author = models.ForeignKey(User, verbose_name=_('author') , related_name="post_author" ,on_delete=models.CASCADE)
+    title = models.CharField(_('title'),max_length=50)
     tags = TaggableManager()
     image = models.ImageField(upload_to="post/")
     created_at = models.DateField(default=timezone.now)
